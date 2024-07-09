@@ -5,3 +5,9 @@
 body {
   background-color: black;
 }
+
+@layer utilities {
+  .btn-orange {
+    @apply bg-orange px-8 py-4 text-white transition-all hover:bg-black
+  }
+}
