@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <nav className="py-10 px-32">
         <div className="flex justify-between items-center">
-            <Link href={"/"} className="flex gap-2.5">
+            <Link href={"/"} className="flex gap-2.5 items-center">
                 <Image src="/se-logo.svg" alt="logo" width={50} height={50} className="w-auto h-auto"/>
                 <p className="text-lg text-white font-bold">SE PRO-GRAM</p>
             </Link>
