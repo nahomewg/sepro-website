@@ -1,7 +1,18 @@
+import BlogGallery from "@/components/BlogGallery";
+import Hero from "@/components/Hero";
+import ProgramInfo from "@/components/ProgramInfo";
+import Quiz from "@/components/Quiz";
+import TestimonialGallery from "@/components/TestimonialGallery";
+
 export default function Home() {
   return (
-    <h1 className="font-bold text-teal-500 text-2xl">
-      Hello World
-    </h1>
+    <>
+      <Hero />
+      <Hero />
+      <ProgramInfo />
+      <Quiz />
+      <BlogGallery />
+      <TestimonialGallery />
+    </>
   )
 }
