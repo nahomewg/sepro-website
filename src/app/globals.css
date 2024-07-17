@@ -6,8 +6,6 @@ body {
   background-color: black;
 }
 
-@layer utilities {
-  .btn-orange {
-    @apply bg-orange px-8 py-4 text-white transition-all hover:bg-black
-  }
+h1, h2, h3, h4, h5, h6, p, span, a, ul, li, label {
+    color: #DDDDDD;
 }
