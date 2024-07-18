@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        'xs': '480px',
+      },
       backgroundImage: {
         "hero-background": "url('/hero-background.png')",
       },
