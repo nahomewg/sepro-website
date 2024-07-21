@@ -12,7 +12,7 @@ const Navbar = () => {
             </Link>
             <ul className="hidden h-full gap-28 lg:flex">
                 {NAV_LINKS.map((link) => (
-                    <Link href={link.href} key={link.key}
+                    <Link href={link.href} key={link.id}
                     className="text-lg font-light cursor-pointer transition-all hover:font-bold">
                         {link.label}
                     </Link>
