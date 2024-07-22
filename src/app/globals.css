@@ -10,6 +10,26 @@ h1, h2, h3, h4, h5, h6, p, span, a, ul, li, label {
     color: #DDDDDD;
 }
 
+.MuiMobileStepper-root {
+  background-color: black;
+}
+
+.MuiMobileStepper-root > span {
+  background-color: #ffcd95;
+}
+
+.MuiMobileStepper-root > span > span {
+  background-color: #F28A12;
+}
+
+.MuiMobileStepper-root > Button {
+  font-family: inherit;
+  text-transform: none;
+  color: #DDDDDD;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 @layer utilities {
   .embla {
       --slide-height: 19rem;
