@@ -1,11 +1,9 @@
 'use client'
 import { EmblaOptionsType } from 'embla-carousel'
 import useEmblaCarousel from 'embla-carousel-react';
-import { DUMMY_BLOGS, DUMMY_TESTIMONIALS } from "@/constants"
 import Link from 'next/link';
 import Image from 'next/image';
 import { Avatar } from '@nextui-org/avatar';
-
 
 type PropType = {
     slides: any[]
