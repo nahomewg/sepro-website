@@ -26,3 +26,9 @@ export const DUMMY_TESTIMONIALS : Testimonial[] = [
     { full_name: 'Nahome Giorgis', id: '7', body: 'Awesome trainer! Very knowledgeable on many different exercises and movements.', rating: 5},
     { full_name: 'Nahome Giorgis', id: '8', body: 'Awesome trainer! Very knowledgeable on many different exercises and movements.', rating: 4},
 ]
+
+export const DUMMY_QUESTIONS : Questions[] = [
+    { question: 'What colour is the sky?', id: '1', questionType: 'multiple', options: ['Blue', 'Green', 'Red', 'Yellow'] },
+    { question: 'How to lose weight?', id: '2', questionType: 'input' },
+    { question: 'How much weight do you want to lose?', id: '3', questionType: 'slider', options: ['Less weight', 'More weight'] },
+]
