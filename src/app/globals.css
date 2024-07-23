@@ -10,7 +10,7 @@ h1, h2, h3, h4, h5, h6, p, a, ul, li, label {
     color: #DDDDDD;
 }
 
-.MuiButtonBase-root, .MuiButtonBase-root > span {
+.MuiButtonBase-root, .MuiButtonBase-root > span, .MuiSlider-rail, .MuiSlider-mark {
   color: #DDDDDD;
 }
 
@@ -34,7 +34,7 @@ h1, h2, h3, h4, h5, h6, p, a, ul, li, label {
   line-height: 1.75rem;
 }
 
-.MuiSlider-track {
+.MuiSlider-track, .MuiSlider-thumb {
   color: #F28A12;
 }
 
