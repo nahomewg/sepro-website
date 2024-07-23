@@ -1,4 +1,4 @@
-import { Radio } from "@mui/material";
+import { Radio, Slider } from "@mui/material";
 import { useState } from "react";
 
 type PropType = {
@@ -32,11 +32,16 @@ const Questions: React.FC<PropType> = (props) => {
         {questions[activeStep].questionType == 'input' &&
             <div>
                 <p className="text-xl capitalize text-center">{questions[activeStep].question}</p>
+                <div className="flex py-12 justify-center">
+                    <input type="text" placeholder="Enter Your Answer" className="w-full h-16 p-6 bg-black border-orange border-2 text-[#DDDDDD] placeholder-slate-300 rounded-3xl max-w-md xl:max-w-xl" />
+                </div>
             </div>
         }
         {questions[activeStep].questionType == 'slider' &&
             <div>
                 <p className="text-xl capitalize text-center">{questions[activeStep].question}</p>
+                <Slider className="py-12" defaultValue={0} marks min={0} max={5} />
+
             </div>
         }
     </section>

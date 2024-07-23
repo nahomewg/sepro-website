@@ -11,7 +11,9 @@ export default function Quiz() {
   const [activeStep, setActiveStep] = useState(0);
 
   const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    if (activeStep !== DUMMY_QUESTIONS.length - 1) {
+      setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    }
     const maxSteps = DUMMY_QUESTIONS.length;
   };
 
@@ -35,13 +37,12 @@ export default function Quiz() {
           </Button>
         } 
         nextButton={
-          <Button size="small" onClick={handleNext} disabled={activeStep === DUMMY_QUESTIONS.length - 1}>
-            Next
+          <Button size="small" onClick={handleNext}>
+            {activeStep === DUMMY_QUESTIONS.length - 1 ? 'Submit' : 'Next'}
             <KeyboardArrowRight />
           </Button>
         }>
       </MobileStepper>
-      {/* <Questions questions={DUMMY_QUESTIONS} /> */}
     </div>
   )
 
