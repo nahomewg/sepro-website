@@ -30,6 +30,10 @@ h1, h2, h3, h4, h5, h6, p, span, a, ul, li, label {
   line-height: 1.75rem;
 }
 
+.MuiSlider-track {
+  color: #F28A12;
+}
+
 @layer utilities {
   .embla {
       --slide-height: 19rem;
