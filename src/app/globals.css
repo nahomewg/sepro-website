@@ -6,7 +6,7 @@ body {
   background-color: black;
 }
 
-h1, h2, h3, h4, h5, h6, p, span, a, ul, li, label {
+h1, h2, h3, h4, h5, h6, p, a, ul, li, label {
     color: #DDDDDD;
 }
 
@@ -32,6 +32,10 @@ h1, h2, h3, h4, h5, h6, p, span, a, ul, li, label {
 
 .MuiSlider-track {
   color: #F28A12;
+}
+
+.MuiRating-icon {
+  color: #faaf00;
 }
 
 @layer utilities {
