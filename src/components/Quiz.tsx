@@ -2,7 +2,7 @@
 import { DUMMY_QUESTIONS } from "@/constants"
 import Questions from "./Questions"
 import { useState } from "react";
-import { Box, Button, MobileStepper, Paper, Typography } from "@mui/material";
+import { Button, MobileStepper } from "@mui/material";
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 
