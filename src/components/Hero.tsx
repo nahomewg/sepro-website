@@ -11,7 +11,7 @@ const Hero = () => {
         </div>
       </div>
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-        <Button type="button" title="GET STARTED" color="bg-transparent" borderColor="border-slate-400" borderSize="border-4" />
+        <Button type="button" title="Get Started" borderColor="border-slate-400" />
       </div>
     </section>
   )
