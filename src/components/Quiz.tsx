@@ -9,12 +9,12 @@ import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 
 export default function Quiz() { 
   const [activeStep, setActiveStep] = useState(0);
+  const maxSteps = DUMMY_QUESTIONS.length;
 
   const handleNext = () => {
     if (activeStep !== DUMMY_QUESTIONS.length - 1) {
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
     }
-    const maxSteps = DUMMY_QUESTIONS.length;
   };
 
   const handleBack = () => {
@@ -27,7 +27,7 @@ export default function Quiz() {
       <Questions questions={DUMMY_QUESTIONS} activeStep={activeStep} />
       <MobileStepper
         variant="progress"
-        steps={DUMMY_QUESTIONS.length}
+        steps={maxSteps}
         position="static"
         activeStep={activeStep} 
         backButton={
@@ -38,7 +38,7 @@ export default function Quiz() {
         } 
         nextButton={
           <Button size="small" onClick={handleNext}>
-            {activeStep === DUMMY_QUESTIONS.length - 1 ? 'Submit' : 'Next'}
+            {activeStep === maxSteps - 1 ? 'Submit' : 'Next'}
             <KeyboardArrowRight />
           </Button>
         }>
