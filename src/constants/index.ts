@@ -1,5 +1,5 @@
 export const NAV_LINKS = [
-    { href: '/', id: 'training', label: 'Training'},
+    { href: '/training', id: 'training', label: 'Training'},
     { href: '/', id: 'blog', label: 'Blog'},
     { href: '/', id: 'shop', label: 'Shop'},
     { href: '/', id: 'contact', label: 'Contact'},
@@ -31,4 +31,11 @@ export const DUMMY_QUESTIONS : Questions[] = [
     { question: 'What colour is the sky?', id: '1', questionType: 'multiple', options: ['Blue', 'Green', 'Red', 'Yellow'] },
     { question: 'How to lose weight?', id: '2', questionType: 'input' },
     { question: 'How much weight do you want to lose?', id: '3', questionType: 'slider', options: ['Less weight', 'More weight'] },
+]
+
+export const DUMMY_TRAINING_INFO : TrainingInfo[] = [
+    { title: '10 tips for losing weight', id: '1', description: 'lorum ipsum la di da de do do doooo. Great program for you, sign up to achieve the best version of yourself!', image: '/ropes.png', alt: 'Man with weighted ropes' },
+    { title: '10 tips for losing weight', id: '2', description: 'lorum ipsum la di da de do do doooo. Great program for you, sign up to achieve the best version of yourself!', image: '/ropes.png', alt: 'Man with weighted ropes' },
+    { title: '10 tips for losing weight', id: '3', description: 'lorum ipsum la di da de do do doooo. Great program for you, sign up to achieve the best version of yourself!', image: '/ropes.png', alt: 'Man with weighted ropes' },
+    { title: '10 tips for losing weight', id: '4', description: 'lorum ipsum la di da de do do doooo. Great program for you, sign up to achieve the best version of yourself!', image: '/ropes.png', alt: 'Man with weighted ropes' },
 ]
