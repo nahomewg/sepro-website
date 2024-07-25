@@ -17,6 +17,7 @@
     "@nextui-org/system": "^2.2.5",
     "@nextui-org/theme": "^2.2.9",
     "embla-carousel": "^8.1.7",
+    "embla-carousel-autoplay": "^8.1.7",
     "embla-carousel-react": "^8.1.7",
     "framer-motion": "^11.3.8",
     "next": "14.2.4",
