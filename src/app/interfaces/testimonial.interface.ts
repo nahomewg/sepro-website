@@ -3,4 +3,6 @@ interface Testimonial {
     id: string,
     body: string,
     rating: number
+    image?: string
+    alt?: string
 }

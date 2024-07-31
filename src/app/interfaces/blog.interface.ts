@@ -3,5 +3,13 @@ interface Blog {
     id: string,
     body: string,
     image: string,
-    date: string
+    alt?: string
+    date?: string
+    additionalResources?: AdditionalResources[];
+}
+
+interface AdditionalResources {
+    title: string,
+    id: string,
+    link: string
 }

@@ -4,4 +4,6 @@ interface TrainingInfo {
     description: string,
     image?: string,
     alt? : string
+    feature?: boolean
+    date: string
 }
