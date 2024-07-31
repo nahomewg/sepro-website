@@ -1,18 +1,22 @@
 'use client'
-import { DUMMY_QUESTIONS } from "@/constants"
 import Questions from "./Questions"
 import { useState } from "react";
 import { Button, MobileStepper } from "@mui/material";
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 
+type QuizProps = {
+  questions: Questions[];
+}
 
-export default function Quiz() { 
+
+const Quiz: React.FC<QuizProps> = (props) => { 
+  const { questions } = props
   const [activeStep, setActiveStep] = useState(0);
-  const maxSteps = DUMMY_QUESTIONS.length;
+  const maxSteps = questions.length;
 
   const handleNext = () => {
-    if (activeStep !== DUMMY_QUESTIONS.length - 1) {
+    if (activeStep !== questions.length - 1) {
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
     }
   };
@@ -24,7 +28,7 @@ export default function Quiz() {
   return (
     <div className="pb-48 px-10 lg:px-32 xl:px-64">
       <h2 className="text-3xl md:text-4xl pb-12 font-bold text-center">Readiness Quiz</h2>
-      <Questions questions={DUMMY_QUESTIONS} activeStep={activeStep} />
+      <Questions questions={questions} activeStep={activeStep} />
       <MobileStepper
         variant="progress"
         steps={maxSteps}
@@ -45,5 +49,6 @@ export default function Quiz() {
       </MobileStepper>
     </div>
   )
-
 }
+
+export default Quiz
