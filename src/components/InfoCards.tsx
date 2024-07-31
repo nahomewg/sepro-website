@@ -18,7 +18,7 @@ const InfoCards: React.FC<CardProps> = (props) => {
   return (
     <>
       {preview && <div className="flex flex-col items-center gap-5 py-12 lg:justify-items-center lg:grid lg:grid-cols-2">
-          {trainingInfo.map((card) => (
+          {trainingInfo.slice(0, 4).map((card) => (
             <Link href={"/"} key={card.id} className={`max-w-md xl:max-w-xl w-full flex ${preview ? 'items-center' : ''} overflow-hidden border-orange border-2 rounded-3xl transition-all hover:font-bold hover:border-3`}>
               <Image src={card.image ? card.image : '/ropes.png'} alt={card.alt ? card.alt : 'Image next to text'} width={200} height={400} className="w-24 h-28 sm:w-32 sm:h-36 md:w-44 md:h-48 rounded-s-3xl border-r-2 border-r-orange" />
               <div className="w-full px-5">
