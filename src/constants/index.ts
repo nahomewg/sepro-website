@@ -1,7 +1,7 @@
 export const NAV_LINKS = [
     { href: '/training', id: 'training', label: 'Training'},
     { href: '/', id: 'blog', label: 'Blog'},
-    { href: '/', id: 'shop', label: 'Shop'},
+    { href: '/', id: 'testimonials', label: 'Testimonials'},
     { href: '/', id: 'contact', label: 'Contact'},
 ]
 
@@ -28,14 +28,18 @@ export const DUMMY_TESTIMONIALS : Testimonial[] = [
 ]
 
 export const DUMMY_QUESTIONS : Questions[] = [
-    { question: 'What colour is the sky?', id: '1', questionType: 'multiple', options: ['Blue', 'Green', 'Red', 'Yellow'] },
+    { question: 'What colour is the sky?', id: '1', questionType: 'multiple', options: [{ option: 'Red', id: '1' }, { option: 'Blue', id: '2' }, { option: 'Green', id: '3' }, { option: 'Yellow', id: '4' }] },
     { question: 'How to lose weight?', id: '2', questionType: 'input' },
-    { question: 'How much weight do you want to lose?', id: '3', questionType: 'slider', options: ['Less weight', 'More weight'] },
+    { question: 'How much weight do you want to lose?', id: '3', questionType: 'slider', options: [{ option: '1kg', id: '1' }, { option: '5kg', id: '2' }, { option: '10kg', id: '3' }] },
 ]
 
 export const DUMMY_TRAINING_INFO : TrainingInfo[] = [
-    { title: '10 tips for losing weight', id: '1', description: 'lorum ipsum la di da de do do doooo. Great program for you, sign up to achieve the best version of yourself!', image: '/ropes.png', alt: 'Man with weighted ropes' },
-    { title: '10 tips for losing weight', id: '2', description: 'lorum ipsum la di da de do do doooo. Great program for you, sign up to achieve the best version of yourself!', image: '/ropes.png', alt: 'Man with weighted ropes' },
-    { title: '10 tips for losing weight', id: '3', description: 'lorum ipsum la di da de do do doooo. Great program for you, sign up to achieve the best version of yourself!', image: '/ropes.png', alt: 'Man with weighted ropes' },
-    { title: '10 tips for losing weight', id: '4', description: 'lorum ipsum la di da de do do doooo. Great program for you, sign up to achieve the best version of yourself!', image: '/ropes.png', alt: 'Man with weighted ropes' },
+    { title: '10 tips for losing weight', id: '1', description: 'lorum ipsum la di da de do do doooo. Great program for you, sign up to achieve the best version of yourself!', image: '/ropes.png', alt: 'Man with weighted ropes', feature: true, date: '2022-01-01' },
+    { title: '10 tips for losing weight', id: '2', description: 'lorum ipsum la di da de do do doooo. Great program for you, sign up to achieve the best version of yourself!', image: '/ropes.png', alt: 'Man with weighted ropes', feature: false, date: '2022-01-01' },
+    { title: '10 tips for losing weight', id: '3', description: 'lorum ipsum la di da de do do doooo. Great program for you, sign up to achieve the best version of yourself!', image: '/ropes.png', alt: 'Man with weighted ropes', feature: false, date: '2022-01-01' },
+    { title: '10 tips for losing weight', id: '4', description: 'lorum ipsum la di da de do do doooo. Great program for you, sign up to achieve the best version of yourself!', image: '/ropes.png', alt: 'Man with weighted ropes', feature: false, date: '2022-01-01' },
+    { title: '10 tips for losing weight', id: '5', description: 'lorum ipsum la di da de do do doooo. Great program for you, sign up to achieve the best version of yourself!', image: '/ropes.png', alt: 'Man with weighted ropes', feature: false, date: '2022-01-01' },
+    { title: '10 tips for losing weight', id: '6', description: 'lorum ipsum la di da de do do doooo. Great program for you, sign up to achieve the best version of yourself!', image: '/ropes.png', alt: 'Man with weighted ropes', feature: false, date: '2022-01-01' },
+    { title: '10 tips for losing weight', id: '7', description: 'lorum ipsum la di da de do do doooo. Great program for you, sign up to achieve the best version of yourself!', image: '/ropes.png', alt: 'Man with weighted ropes', feature: false, date: '2022-01-01' },
+    { title: '10 tips for losing weight', id: '8', description: 'lorum ipsum la di da de do do doooo. Great program for you, sign up to achieve the best version of yourself!', image: '/ropes.png', alt: 'Man with weighted ropes', feature: false, date: '2022-01-01' },
 ]
