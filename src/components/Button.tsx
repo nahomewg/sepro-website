@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-type ButtonProps = {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     type: 'button' | 'submit';
     title: string;
     icon?: string;
