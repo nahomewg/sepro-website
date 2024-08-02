@@ -2,7 +2,7 @@ export const NAV_LINKS = [
     { href: '/training', id: 'training', label: 'Training'},
     { href: '/blog', id: 'blog', label: 'Blog'},
     { href: '/', id: 'testimonials', label: 'Testimonials'},
-    { href: '/', id: 'contact', label: 'Contact'},
+    { href: '/contact', id: 'contact', label: 'Contact'},
 ]
 
 export const DUMMY_BLOGS : Blog[] = [
