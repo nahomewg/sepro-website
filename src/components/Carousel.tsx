@@ -25,7 +25,7 @@ const Carousel: React.FC<PropType> = (props) => {
                             {contentType == 'blog' &&
                                 <Link href={"/"} key={slide.id} className='flex relative items-center justify-center w-full h-full border-orange border-2 rounded-3xl transition-all hover:font-bold hover:border-3'>
                                     <Image src={slide.image} alt="Background image" width={0} height={0} sizes='100vw' style={{ objectFit: 'cover' }} className='w-full h-full absolute rounded-3xl opacity-50' />
-                                    <p className='line-clamp-2 px-5 text-base sm:text-2xl md:text-3xl capitalize drop-shadow-[2px_2px_0_rgba(0,0,0,1)] font-semibold z-10'>{slide.title}</p>
+                                    <p className='line-clamp-2 px-5 text-base sm:text-xl md:text-2xl capitalize drop-shadow-[2px_2px_0_rgba(0,0,0,1)] font-semibold z-10'>{slide.title}</p>
                                 </Link>
                             }
                             {contentType == 'testimonial' &&
