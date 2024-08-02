@@ -15,6 +15,7 @@ const config: Config = {
       },
       backgroundImage: {
         "hero-background": "url('/hero-background.png')",
+        "blog-background": "url('/ropes.png')",
       },
       colors: {
         'secondary-white': '#E5E5E5',
