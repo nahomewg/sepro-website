@@ -53,6 +53,10 @@ h1, h2, h3, h4, h5, h6, p, a, ul, li, label {
 }
 
 @layer utilities {
+  html, body {
+    @apply scroll-smooth;
+  }
+
   .embla {
       --slide-height: 19rem;
       --slide-spacing: 1rem;
