@@ -16,6 +16,7 @@
     "@nextui-org/avatar": "^2.0.32",
     "@nextui-org/system": "^2.2.5",
     "@nextui-org/theme": "^2.2.9",
+    "date-fns": "^3.6.0",
     "embla-carousel": "^8.1.7",
     "embla-carousel-autoplay": "^8.1.7",
     "embla-carousel-react": "^8.1.7",
