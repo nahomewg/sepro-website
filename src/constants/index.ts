@@ -6,7 +6,7 @@ export const NAV_LINKS = [
 ]
 
 export const DUMMY_BLOGS : Blog[] = [
-    { title: '10 tips for losing weight', id: '1', body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', image: '/ropes.png', date: '2022-01-01' },
+    { title: '10 tips for losing weight', id: '1', body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', image: '/ropes.png', date: '2022-01-01', additionalResources: [{ title: 'Video Link', id: '1', link: 'https://youtube.com'}, { title: 'Amazon Link', id: '2', link: 'https://amazon.com'}, { title: 'Etsy Link', id: '3', link: 'https://etsy.com' }] },
     { title: '10 tips for losing weight', id: '2', body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', image: '/ropes.png', date: '2022-01-01' },
     { title: '10 tips for losing weight', id: '3', body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', image: '/ropes.png', date: '2022-01-01' },
     { title: '10 tips for losing weight', id: '4', body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', image: '/ropes.png', date: '2022-01-01' },
