@@ -11,7 +11,7 @@ const BlogCard = (props: any) => {
                 <Image src={DUMMY_BLOGS[0].image ? DUMMY_BLOGS[0].image : '/ropes.png'} alt="Training image" width={200} height={400} className="w-1/2 h-full rounded-s-3xl" />
                 <div className="flex flex-col flex-grow p-5">
                     <p className="pb-2">
-                        {formatDate(DUMMY_BLOGS[0].date)}
+                        {formatDate(DUMMY_BLOGS[0].created_at)}
                     </p>
                     <h2 className="line-clamp-2 pb-2 text-base sm:text-2xl md:text-3xl capitalize font-semibold">{DUMMY_BLOGS[0].title}</h2>
                     <p>{DUMMY_BLOGS[0].body}</p>
