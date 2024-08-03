@@ -5,5 +5,5 @@ interface TrainingInfo {
     image?: string,
     alt? : string
     feature?: boolean
-    date: string
+    created_at?: string
 }

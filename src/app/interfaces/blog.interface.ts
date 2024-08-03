@@ -1,15 +1,17 @@
 interface Blog {
     title: string,
-    id: string,
+    id: number,
     body: string,
     image: string,
     alt?: string
-    date?: string
+    created_at?: string
     additionalResources?: AdditionalResources[];
 }
 
 interface AdditionalResources {
     title: string,
-    id: string,
-    link: string
+    id: number,
+    blogId: number
+    link: string,
+    created_at?: string
 }
