@@ -5,28 +5,33 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Avatar } from '@nextui-org/avatar';
 import { Rating } from '@mui/material';
+import { useRouter } from 'next/navigation';
 
 type PropType = {
     slides: any[]
-    contentType: 'blog' | 'testimonial'
+    contentType: 'blog' | 'testimonial' | 'additional'
     options?: EmblaOptionsType,
 }
 
-const Carousel: React.FC<PropType> = (props) => {
-    const { slides, options, contentType } = props;
+const Carousel: React.FC<PropType> = ({ slides, options, contentType }) => {
     const [emblaRef] = useEmblaCarousel(options);
-
+    const router = useRouter();
+  
+    const handleBlogClick = (id: string) => {
+      router.push(`/blog?id=${id}`);
+    };
+  
     return (
         <section className='embla'>
             <div className='overflow-hidden' ref={emblaRef}>
                 <div className='emblaContainer'>
                     {slides.map((slide) => (
-                        <div key={slide.id} className={`emblaSlide ${contentType == 'blog' ? 'h-48' : 'h-80'}`}>
+                        <div key={slide.id} className={`emblaSlide ${contentType == 'blog' || contentType == 'additional' ? 'h-48' : 'h-80'}`}>
                             {contentType == 'blog' &&
-                                <Link href={"/"} key={slide.id} className='flex relative items-center justify-center w-full h-full border-orange border-2 rounded-3xl transition-all hover:font-bold hover:border-3'>
+                                <div onClick={() => handleBlogClick(slide.id)} className='cursor-pointer flex relative items-center justify-center w-full h-full border-orange border-2 rounded-3xl transition-all hover:font-bold hover:border-3'>
                                     <Image src={slide.image} alt="Background image" width={0} height={0} sizes='100vw' style={{ objectFit: 'cover' }} className='w-full h-full absolute rounded-3xl opacity-50' />
                                     <p className='line-clamp-2 px-5 text-base sm:text-xl md:text-2xl capitalize drop-shadow-[2px_2px_0_rgba(0,0,0,1)] font-semibold z-10'>{slide.title}</p>
-                                </Link>
+                                </div>
                             }
                             {contentType == 'testimonial' &&
                                 <Link href={"/"} className='flex flex-col w-full h-full border-orange border-2 rounded-3xl transition-all hover:font-bold hover:border-3'>
@@ -41,6 +46,12 @@ const Carousel: React.FC<PropType> = (props) => {
                                         </div>
                                     </div>
                                 </Link>
+                            }
+                            {contentType == 'additional' &&
+                                <a href={slide.link}  target='_blank' className='cursor-pointer flex relative items-center justify-center w-full h-full border-orange border-2 rounded-3xl transition-all hover:font-bold hover:border-3'>
+                                    <Image src='/ropes.png' alt="Background image" width={0} height={0} sizes='100vw' style={{ objectFit: 'cover' }} className='w-full h-full absolute rounded-3xl opacity-50' />
+                                    <p className='line-clamp-2 px-5 text-base sm:text-xl md:text-2xl capitalize drop-shadow-[2px_2px_0_rgba(0,0,0,1)] font-semibold z-10'>{slide.title}</p>
+                                </a>
                             }
                         </div>
                     ))}
