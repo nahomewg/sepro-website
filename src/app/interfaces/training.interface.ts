@@ -1,4 +1,4 @@
-interface TrainingInfo {
+export interface TrainingInfo {
     title: string,
     id: string,
     description: string,

@@ -1,17 +1,17 @@
-interface Blog {
-    title: string,
-    id: number,
-    body: string,
-    image: string,
-    alt?: string
-    created_at?: string
+export interface Blog {
+    id: string;
+    title: string;
+    body: string;
+    image: string;
+    alt?: string;
+    created_at?: string;
     additionalResources?: AdditionalResources[];
-}
-
-interface AdditionalResources {
-    title: string,
-    id: number,
-    blogId: number
-    link: string,
-    created_at?: string
-}
+  }
+  
+  export interface AdditionalResources {
+    id: string;
+    title: string;
+    link: string;
+    created_at?: string;
+    blogId: string;
+  }
