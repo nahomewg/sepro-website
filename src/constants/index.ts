@@ -6,14 +6,14 @@ export const NAV_LINKS = [
 ]
 
 export const DUMMY_BLOGS : Blog[] = [
-    { title: '10 tips for losing weight', id: '1', body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', image: '/ropes.png', date: '2022-01-01', additionalResources: [{ title: 'Video Link', id: '1', link: 'https://youtube.com'}, { title: 'Amazon Link', id: '2', link: 'https://amazon.com'}, { title: 'Etsy Link', id: '3', link: 'https://etsy.com' }] },
-    { title: '10 tips for losing weight', id: '2', body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', image: '/ropes.png', date: '2022-01-01' },
-    { title: '10 tips for losing weight', id: '3', body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', image: '/ropes.png', date: '2022-01-01' },
-    { title: '10 tips for losing weight', id: '4', body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', image: '/ropes.png', date: '2022-01-01' },
-    { title: '10 tips for losing weight', id: '5', body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', image: '/ropes.png', date: '2022-01-01' },
-    { title: '10 tips for losing weight', id: '6', body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', image: '/ropes.png', date: '2022-01-01' },
-    { title: '10 tips for losing weight', id: '7', body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', image: '/ropes.png', date: '2022-01-01' },
-    { title: '10 tips for losing weight', id: '8', body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', image: '/ropes.png', date: '2022-01-01' },
+    { title: '10 tips for losing weight', id: 1, body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', image: '/ropes.png', created_at: '2022-01-01', additionalResources: [{ title: 'Video Link', id: 1, blogId: 1, link: 'https://youtube.com'}, { title: 'Amazon Link', id: 2, blogId: 1, link: 'https://amazon.com'}, { title: 'Etsy Link', id: 3, blogId: 1, link: 'https://etsy.com' }] },
+    { title: '10 tips for losing weight', id: 2, body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', image: '/ropes.png', created_at: '2022-01-01' },
+    { title: '10 tips for losing weight', id: 3, body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', image: '/ropes.png', created_at: '2022-01-01' },
+    { title: '10 tips for losing weight', id: 4, body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', image: '/ropes.png', created_at: '2022-01-01' },
+    { title: '10 tips for losing weight', id: 5, body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', image: '/ropes.png', created_at: '2022-01-01' },
+    { title: '10 tips for losing weight', id: 6, body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', image: '/ropes.png', created_at: '2022-01-01' },
+    { title: '10 tips for losing weight', id: 7, body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', image: '/ropes.png', created_at: '2022-01-01' },
+    { title: '10 tips for losing weight', id: 8, body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', image: '/ropes.png', created_at: '2022-01-01' },
 ]
 
 export const DUMMY_TESTIMONIALS : Testimonial[] = [
@@ -34,12 +34,12 @@ export const DUMMY_QUESTIONS : Questions[] = [
 ]
 
 export const DUMMY_TRAINING_INFO : TrainingInfo[] = [
-    { title: '10 tips for losing weight', id: '1', description: 'lorum ipsum la di da de do do doooo. Great program for you, sign up to achieve the best version of yourself!', image: '/ropes.png', alt: 'Man with weighted ropes', feature: true, date: '2022-01-01' },
-    { title: '10 tips for losing weight', id: '2', description: 'lorum ipsum la di da de do do doooo. Great program for you, sign up to achieve the best version of yourself!', image: '/ropes.png', alt: 'Man with weighted ropes', feature: false, date: '2022-01-01' },
-    { title: '10 tips for losing weight', id: '3', description: 'lorum ipsum la di da de do do doooo. Great program for you, sign up to achieve the best version of yourself!', image: '/ropes.png', alt: 'Man with weighted ropes', feature: false, date: '2022-01-01' },
-    { title: '10 tips for losing weight', id: '4', description: 'lorum ipsum la di da de do do doooo. Great program for you, sign up to achieve the best version of yourself!', image: '/ropes.png', alt: 'Man with weighted ropes', feature: false, date: '2022-01-01' },
-    { title: '10 tips for losing weight', id: '5', description: 'lorum ipsum la di da de do do doooo. Great program for you, sign up to achieve the best version of yourself!', image: '/ropes.png', alt: 'Man with weighted ropes', feature: false, date: '2022-01-01' },
-    { title: '10 tips for losing weight', id: '6', description: 'lorum ipsum la di da de do do doooo. Great program for you, sign up to achieve the best version of yourself!', image: '/ropes.png', alt: 'Man with weighted ropes', feature: false, date: '2022-01-01' },
-    { title: '10 tips for losing weight', id: '7', description: 'lorum ipsum la di da de do do doooo. Great program for you, sign up to achieve the best version of yourself!', image: '/ropes.png', alt: 'Man with weighted ropes', feature: false, date: '2022-01-01' },
-    { title: '10 tips for losing weight', id: '8', description: 'lorum ipsum la di da de do do doooo. Great program for you, sign up to achieve the best version of yourself!', image: '/ropes.png', alt: 'Man with weighted ropes', feature: false, date: '2022-01-01' },
+    { title: '10 tips for losing weight', id: '1', description: 'lorum ipsum la di da de do do doooo. Great program for you, sign up to achieve the best version of yourself!', image: '/ropes.png', alt: 'Man with weighted ropes', feature: true, created_at: '2022-01-01' },
+    { title: '10 tips for losing weight', id: '2', description: 'lorum ipsum la di da de do do doooo. Great program for you, sign up to achieve the best version of yourself!', image: '/ropes.png', alt: 'Man with weighted ropes', feature: false, created_at: '2022-01-01' },
+    { title: '10 tips for losing weight', id: '3', description: 'lorum ipsum la di da de do do doooo. Great program for you, sign up to achieve the best version of yourself!', image: '/ropes.png', alt: 'Man with weighted ropes', feature: false, created_at: '2022-01-01' },
+    { title: '10 tips for losing weight', id: '4', description: 'lorum ipsum la di da de do do doooo. Great program for you, sign up to achieve the best version of yourself!', image: '/ropes.png', alt: 'Man with weighted ropes', feature: false, created_at: '2022-01-01' },
+    { title: '10 tips for losing weight', id: '5', description: 'lorum ipsum la di da de do do doooo. Great program for you, sign up to achieve the best version of yourself!', image: '/ropes.png', alt: 'Man with weighted ropes', feature: false, created_at: '2022-01-01' },
+    { title: '10 tips for losing weight', id: '6', description: 'lorum ipsum la di da de do do doooo. Great program for you, sign up to achieve the best version of yourself!', image: '/ropes.png', alt: 'Man with weighted ropes', feature: false, created_at: '2022-01-01' },
+    { title: '10 tips for losing weight', id: '7', description: 'lorum ipsum la di da de do do doooo. Great program for you, sign up to achieve the best version of yourself!', image: '/ropes.png', alt: 'Man with weighted ropes', feature: false, created_at: '2022-01-01' },
+    { title: '10 tips for losing weight', id: '8', description: 'lorum ipsum la di da de do do doooo. Great program for you, sign up to achieve the best version of yourself!', image: '/ropes.png', alt: 'Man with weighted ropes', feature: false, created_at: '2022-01-01' },
 ]
