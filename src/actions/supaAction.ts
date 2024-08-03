@@ -1,5 +1,6 @@
 'use server'
 import { Blog } from "@/app/interfaces/blog.interface";
+import { TrainingInfo } from "@/app/interfaces/training.interface";
 import { db } from "@/db";
 import { blogsTable, trainingInfoTable } from "@/db/schema";
 
