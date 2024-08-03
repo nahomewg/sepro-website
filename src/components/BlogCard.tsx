@@ -1,18 +1,13 @@
-import Link from "next/link"
 import Image from "next/image"
 import { DUMMY_BLOGS } from "@/constants"
 import { parseISO, format } from 'date-fns';
+import Link from "next/link";
+import { formatDate } from "@/app/utilities/dateUtils";
 
 const BlogCard = (props: any) => {
-    const formatDate = (dateString: string | undefined) => {
-        if (!dateString) return '';
-        const date = parseISO(dateString);
-        return format(date, 'MMMM d, yyyy');
-      };
-
     return (
         <section id={props.id} className="py-48 px-10 lg:px-32 xl:px-64">
-            <Link href={"/"} className="flex border-orange border-2 rounded-3xl transition-all hover:border-3">
+            <Link href={`/blog?id=${DUMMY_BLOGS[0].id}`} className="cursor-pointer flex border-orange border-2 rounded-3xl transition-all hover:border-3">
                 <Image src={DUMMY_BLOGS[0].image ? DUMMY_BLOGS[0].image : '/ropes.png'} alt="Training image" width={200} height={400} className="w-1/2 h-full rounded-s-3xl" />
                 <div className="flex flex-col flex-grow p-5">
                     <p className="pb-2">
