@@ -2,11 +2,11 @@
 import InfoCards from "./InfoCards"
 import { useEffect, useState } from "react"
 import { getTrainingInfo } from "@/actions/supaAction";
-import { TrainingInfo } from "@/app/interfaces/training.interface";
+import { ITrainingInfo } from "@/app/interfaces/training.interface";
 import Loading from "@/app/loading";
 
 const ProgramInfo = () => {
-  const [trainingInfo, setTrainingInfo] = useState<TrainingInfo[]>([]);
+  const [trainingInfo, setTrainingInfo] = useState<ITrainingInfo[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
