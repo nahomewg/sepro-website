@@ -36,7 +36,7 @@ const InfoCards: React.FC<CardProps> = (props) => {
             <div className="emblaContainer">
               {trainingInfo.map((slide) => (
                 <div key={slide.id} className="emblaSlide h-60">
-                  <Link href={"/training"} className="flex overflow-hidden border-orange border-2 rounded-3xl transition-all hover:border-3">
+                  <Link href={`/training?id=${slide.id}`} className="flex overflow-hidden border-orange border-2 rounded-3xl transition-all hover:border-3">
                     <Image src={slide.image ? slide.image : '/ropes.png'} alt="Training image" width={200} height={400} className="hidden sm:block sm:w-1/3 rounded-s-3xl" />
                     <div className="flex flex-col flex-grow p-5 items-center">
                       <h2 className="line-clamp-2 pb-2 text-base sm:text-2xl md:text-3xl text-center capitalize font-semibold">{slide.title}</h2>
