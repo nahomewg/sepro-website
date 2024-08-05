@@ -1,6 +1,5 @@
 import Image from "next/image"
 import { DUMMY_BLOGS } from "@/constants"
-import { parseISO, format } from 'date-fns';
 import Link from "next/link";
 import { formatDate } from "@/app/utilities/dateUtils";
 

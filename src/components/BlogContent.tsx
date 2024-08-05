@@ -1,6 +1,7 @@
 import { formatDate } from "@/app/utilities/dateUtils";
 import Carousel from "./Carousel";
 import { EmblaOptionsType } from "embla-carousel";
+import { Blog } from "@/app/interfaces/blog.interface";
 
 interface BlogContentProps {
     blog: Blog;
