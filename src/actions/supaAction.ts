@@ -1,6 +1,6 @@
 'use server'
 import { Blog } from "@/app/interfaces/blog.interface";
-import { TrainingInfo } from "@/app/interfaces/training.interface";
+import { ITrainingInfo } from "@/app/interfaces/training.interface";
 import { db } from "@/db";
 import { blogsTable, trainingInfoTable } from "@/db/schema";
 
@@ -18,11 +18,11 @@ export const getBlogs = async (): Promise<Blog[]> => {
   return transformedData;
 };
 
-export const getTrainingInfo = async (): Promise<TrainingInfo[]> => {
+export const getTrainingInfo = async (): Promise<ITrainingInfo[]> => {
   const data = await db.select().from(trainingInfoTable);
   
   // Transform the data to match the TrainingInfo interface
-  const transformedData: TrainingInfo[] = data.map(info => ({
+  const transformedData: ITrainingInfo[] = data.map(info => ({
     ...info,
     created_at: info.created_at ? info.created_at.toISOString() : undefined,
     alt: info.alt ?? undefined,  // Convert null to undefined for the alt field
