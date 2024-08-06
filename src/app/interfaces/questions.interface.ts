@@ -3,6 +3,7 @@ interface Questions {
     id: string,
     questionType: 'multiple' | 'input' | 'slider';
     options?: optionProps[];
+    created_at?: string
 }
 
 interface optionProps {
