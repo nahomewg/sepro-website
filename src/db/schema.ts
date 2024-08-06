@@ -25,17 +25,17 @@ export const additionalResourcesTable = pgTable('additional_resources', {
 export const questionsTable = pgTable('questions', {
   id: uuid('id').default(sql`gen_random_uuid()`).primaryKey(),
   question: varchar('question').notNull(),
-  questionType: varchar('question_type').notNull(), // Enum handling might be needed based on your requirements
-  options: json('options'), // Store options as JSON
+  questionType: varchar('question_type').notNull(), // Ensure `questionType` is one of the valid types
+  created_at: timestamp('created_at').default(sql`CURRENT_TIMESTAMP`) // Default to current timestamp
 });
 
 // Define the schema for the `options` table
 export const optionsTable = pgTable('options', {
   id: uuid('id').default(sql`gen_random_uuid()`).primaryKey(),
+  questionId: uuid('question_id').notNull().references(() => questionsTable.id),
   option: varchar('option').notNull(),
   image: varchar('image'),
   alt: varchar('alt'),
-  questionId: uuid('question_id').notNull().references(() => questionsTable.id),
 });
 
 // Define the schema for the `testimonials` table
