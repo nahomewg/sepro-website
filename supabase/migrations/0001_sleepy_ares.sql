@@ -1,1 +1,0 @@
-ALTER TABLE "questions" ADD COLUMN "created_at" timestamp DEFAULT CURRENT_TIMESTAMP;
