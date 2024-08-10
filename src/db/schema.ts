@@ -21,23 +21,6 @@ export const additionalResourcesTable = pgTable('additional_resources', {
   blogId: uuid('blog_id').notNull().references(() => blogsTable.id),
 });
 
-// Define the schema for the `questions` table
-export const questionsTable = pgTable('questions', {
-  id: uuid('id').default(sql`gen_random_uuid()`).primaryKey(),
-  question: varchar('question').notNull(),
-  questionType: varchar('question_type').notNull(), // Ensure `questionType` is one of the valid types
-  created_at: timestamp('created_at').default(sql`CURRENT_TIMESTAMP`) // Default to current timestamp
-});
-
-// Define the schema for the `options` table
-export const optionsTable = pgTable('options', {
-  id: uuid('id').default(sql`gen_random_uuid()`).primaryKey(),
-  questionId: uuid('question_id').notNull().references(() => questionsTable.id),
-  option: varchar('option').notNull(),
-  image: varchar('image'),
-  alt: varchar('alt'),
-});
-
 // Define the schema for the `testimonials` table
 export const testimonialsTable = pgTable('testimonials', {
   id: uuid('id').default(sql`gen_random_uuid()`).primaryKey(),
@@ -58,3 +41,4 @@ export const trainingInfoTable = pgTable('training_info', {
   feature: boolean('feature'),
   created_at: timestamp('created_at').notNull(),
 });
+
