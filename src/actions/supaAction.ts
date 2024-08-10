@@ -2,8 +2,8 @@
 import { Blog } from "@/app/interfaces/blog.interface";
 import { ITrainingInfo } from "@/app/interfaces/training.interface";
 import { db } from "@/db";
-import { blogsTable, optionsTable, questionsTable, trainingInfoTable } from "@/db/schema";
-import { eq } from "drizzle-orm";
+import { blogsTable, trainingInfoTable } from "@/db/schema";
+
 
 export const getBlogs = async (): Promise<Blog[]> => {
     const data = await db.select().from(blogsTable);
@@ -32,35 +32,4 @@ export const getTrainingInfo = async (): Promise<ITrainingInfo[]> => {
   }));
 
   return transformedData;
-};
-
-export const getQuestions = async (): Promise<Questions[]> => {
-  const data = await db.select().from(questionsTable).leftJoin(optionsTable, eq(questionsTable.id, optionsTable.questionId));
-
-  // Transform the result set into nested Questions objects
-  const questionsMap: Record<string, Questions> = {};
-  data.forEach(row => {
-    const questionId = row.questions.id;
-
-    if (!questionsMap[questionId]) {
-      questionsMap[questionId] = {
-        id: row.questions.id,
-        question: row.questions.question,
-        questionType: row.questions.questionType as 'multiple' | 'input' | 'slider',
-        created_at: row.questions.created_at ? new Date(row.questions.created_at).toISOString() : undefined,
-        options: []
-      };
-    }
-
-    if (row.options) {
-      questionsMap[questionId].options!.push({
-        id: row.options.id,
-        option: row.options.option,
-        image: row.options.image ?? undefined,
-        alt: row.options.alt ?? undefined
-      });
-    }
-  });
-
-  return Object.values(questionsMap);
 };
