@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5, h6, p, a, ul, li, label {
 }
 
 .MuiMobileStepper-root {
-  background-color: black;
+  background-color: black !important;
 }
 
 .MuiMobileStepper-root > span {
@@ -30,22 +30,26 @@ h1, h2, h3, h4, h5, h6, p, a, ul, li, label {
   font-family: inherit;
   text-transform: none;
   color: #DDDDDD;
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+  font-size: 1.25rem !important;
+  line-height: 1.75rem !important;
 }
 
 .MuiSlider-track, .MuiSlider-thumb {
   color: #F28A12;
-  margin-top: 30px;
+  margin-top: 30px !important;
 }
 
 .MuiSlider-rail {
-  margin-top: 30px;
+  margin-top: 30px !important;
+}
+
+.MuiSlider-mark {
+  display: none !important;
 }
 
 .MuiSlider-markLabel {
-  font-size: 20px;
-  color: #DDDDDD;
+  font-size: 20px !important;
+  color: #DDDDDD !important;
 }
 
 .MuiRating-icon {
@@ -91,5 +95,12 @@ h1, h2, h3, h4, h5, h6, p, a, ul, li, label {
     .embla {
       --slide-size: 85%;
     }
+  }
+
+  .stroke-custom {
+    font-family: sans-serif;
+    -webkit-text-stroke: 1px #DDDDDD;
+    -webkit-text-fill-color: transparent;
+    color: #DDDDDD;
   }
 }
