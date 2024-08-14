@@ -99,7 +99,7 @@ h1, h2, h3, h4, h5, h6, p, a, ul, li, label {
 
   .stroke-custom {
     font-family: sans-serif;
-    -webkit-text-stroke: 1px #DDDDDD;
+    -webkit-text-stroke: 2px #DDDDDD;
     -webkit-text-fill-color: transparent;
     color: #DDDDDD;
   }
