@@ -7,7 +7,7 @@ import { ITrainingInfo } from "../interfaces/training.interface";
 import { getTrainingInfo } from "@/actions/supaAction";
 import Loading from "../loading";
 import Quiz from "@/components/Quiz";
-import { BUILD_QUIZ } from "@/constants";
+import { READINESS_QUIZ } from "@/constants";
 
 export default function Training() {
     const [selectedTraining, setSelectedTraining] = useState<any>(null);
@@ -48,7 +48,7 @@ export default function Training() {
         <>
             <TrainingInfo trainingInfo={trainingInfo} />
             {selectedTraining && <TrainingContent training={selectedTraining} />}
-            <Quiz questions={BUILD_QUIZ} quizTitle="Build Your Perfect Body" />
+            <Quiz questionsArray={READINESS_QUIZ} title="Readiness Quiz" />
         </>
     )
 }
