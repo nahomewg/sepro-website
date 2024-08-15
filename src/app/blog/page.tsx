@@ -15,7 +15,7 @@ export default function Blog() {
   
     useEffect(() => {
       if (blogId) {
-        const blog = DUMMY_BLOGS.find(blog => blog.id === +blogId);
+        const blog = DUMMY_BLOGS.find(blog => blog.id === blogId);
         setSelectedBlog(blog);
       } else {
         setSelectedBlog(null);
