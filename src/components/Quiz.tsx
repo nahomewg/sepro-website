@@ -19,11 +19,32 @@ const Quiz: React.FC<PropType> = ( { questionsArray, title }) => {
   const [marks, setMarks] = useState<Mark[]>([]);
   const [maxValue, setMaxValue] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
+  const [hasError, setHasError] = useState(false);
 
 
   const handleNext = () => {
     if (index < questionsArray.length - 1) {
       setIndex(index + 1);
+    }
+  }
+
+  const handleSubmit = async () => {
+    const savedAnswer = answers[questionsArray[index].questionText] || '';
+    setSelectedValue(savedAnswer);
+    setAnswers({ ...answers, [currentQuestion.questionText]: selectedValue });
+    console.log(answers);
+
+    const email = answers['Email']
+    const body = JSON.stringify(answers)
+
+    const res = await fetch('api/emails', { method: 'POST',
+      body: JSON.stringify({ email, body }),
+     })
+
+    if (res.ok) {
+      console.log('Email sent successfully');
+    } else {
+      console.error('Failed to send email');
     }
   }
 
@@ -82,6 +103,7 @@ const Quiz: React.FC<PropType> = ( { questionsArray, title }) => {
       }
     }
     const isValid = validateInput(selectedValue);
+    setHasError(!isValid);
     setNextDisabled(!isValid);
   }, [selectedValue]);
 
@@ -118,7 +140,7 @@ const Quiz: React.FC<PropType> = ( { questionsArray, title }) => {
             <p className="text-xl capitalize text-center">{currentQuestion.questionText}</p>
             <div className="flex flex-col items-center py-12 justify-center">
               <input value={selectedValue} type="text" placeholder="Enter Your Answer" className="w-full h-16 p-6 bg-black border-orange border-2 text-[#DDDDDD] placeholder-slate-300 rounded-3xl max-w-md xl:max-w-xl" onChange={e => handleInputChange(e)} />
-              {/* {error && <p className="text-red-500 pt-3">{error}</p>} */}
+              {hasError && <p className="text-red-500 pt-3">{`Please enter a valid ${currentQuestion.questionText.toLowerCase()}`}</p>}
             </div>
           </div>
         }
@@ -141,7 +163,7 @@ const Quiz: React.FC<PropType> = ( { questionsArray, title }) => {
           </Button>
         } 
         nextButton={
-          <Button size="small" onClick={handleNext} disabled={nextDisabled}>
+          <Button size="small" onClick={index === questionsArray.length - 1 ? handleSubmit : handleNext} disabled={nextDisabled}>
             {index === questionsArray.length - 1 ? 'Submit' : 'Next'}
             <KeyboardArrowRight />
           </Button>
