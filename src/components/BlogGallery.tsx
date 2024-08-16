@@ -2,7 +2,7 @@
 import Carousel from "./Carousel"
 import { EmblaOptionsType } from "embla-carousel"
 import { useEffect, useState } from "react"
-import { getBlogs } from "@/actions/supaAction"
+import { getBlogs } from "../app/api/supaApi";
 import { Blog } from "@/app/interfaces/blog.interface"
 import { DUMMY_BLOGS } from "@/constants"
 
