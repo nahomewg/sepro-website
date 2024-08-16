@@ -4,10 +4,10 @@ import TrainingInfo from "@/components/TrainingInfo";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ITrainingInfo } from "../interfaces/training.interface";
-import { getTrainingInfo } from "@/actions/supaAction";
 import Loading from "../loading";
 import Quiz from "@/components/Quiz";
 import { READINESS_QUIZ } from "@/constants";
+import { getTrainingInfo } from "../api/supaApi";
 
 export default function Training() {
     const [selectedTraining, setSelectedTraining] = useState<any>(null);
