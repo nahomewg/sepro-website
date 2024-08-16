@@ -99,9 +99,14 @@ export const BUILD_QUIZ : Question[] = [
         questionText: 'Goal',
         questionType: 'multiple',
         options: [
-            { id: '1', optionText: 'Lose Weight', nextQuestion: { id: '1', questionText: 'Lose Weight', questionType: 'multiple', options: [{ id: '1', optionText: 'Slim Body' }, { id: '2', optionText: 'Slim Shredded' }]} },
-            { id: '2', optionText: 'Gain Muscle', nextQuestion: { id: '2', questionText: 'Gain Muscle', questionType: 'multiple', options: [{ id: '1', optionText: 'Athletic' }, { id: '2', optionText: 'Beach Body' }, { id: '3', optionText: 'Body Builder' }]} },
-            { id: '3', optionText: 'Optimal Health', nextQuestion: { id: '3', questionText: 'Optimal Health', questionType: 'multiple', options: [{ id: '1', optionText: 'Athletic' }, { id: '2', optionText: 'Workout Body' }, { id: '3', optionText: 'Runner Body' }]} },
+            { id: '1', optionText: 'Lose Weight - Slim', },
+            { id: '2', optionText: 'Lose Weight - Shredded', },
+            { id: '3', optionText: 'Gain Muscle - Athletic', },
+            { id: '4', optionText: 'Gain Muscle - Beach Body', },
+            { id: '5', optionText: 'Gain Muscle - Body Builder', },
+            { id: '6', optionText: 'Optimal Health - Athletic' },
+            { id: '7', optionText: 'Optimal Health - Workout Body' },
+            { id: '8', optionText: 'Optimal Health - Runner Body' },
         ]
     },
     {
@@ -150,15 +155,17 @@ export const BUILD_QUIZ : Question[] = [
         questionText: 'Email',
         questionType: 'input',
     },
-    {
-        id: '7',
-        questionText: 'Program Options',
-        questionType: 'multiple',
-        options: [
-            { id: '1', optionText: 'Need Help 1 on 1' },
-            { id: '2', optionText: 'Ready To Get Started', nextQuestion: { id: '1', questionText: 'Choose Program Level', questionType: 'multiple', options: [{ id: '1', optionText: 'Beginner' }, { id: '2', optionText: 'Intermediate' }, { id: '3', optionText: 'Advanced' }]} },
-        ]
-    }
+    // {
+    //     id: '7',
+    //     questionText: 'Program Options',
+    //     questionType: 'multiple',
+    //     options: [
+    //         { id: '1', optionText: 'Need Help? Connect 1 on 1' },
+    //         { id: '2', optionText: 'Program Level - Beginner' },
+    //         { id: '3', optionText: 'Program Level - Intermediate' },
+    //         { id: '4', optionText: 'Program Level - Advanced' },
+    //     ]
+    // }
 ]
 
 
