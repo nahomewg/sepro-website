@@ -1,12 +1,13 @@
 import { Blog } from "@/app/interfaces/blog.interface"
 import { Question } from "@/app/interfaces/questions.interface"
+import { Testimonial } from "@/app/interfaces/testimonial.interface"
 import { ITrainingInfo } from "@/app/interfaces/training.interface"
 
 // IMPORTANT: DO NOT CHANGE THE ORDER OF THE NAV LINKS
 export const NAV_LINKS = [
     { href: '/training', id: 'training', label: 'Training'},
     { href: '/blog', id: 'blog', label: 'Blog'},
-    { href: '/', id: 'testimonials', label: 'Testimonials'},
+    { href: '/testimonials', id: 'testimonials', label: 'Testimonials'},
     { href: '/contact', id: 'contact', label: 'Contact'},
 ]
 
@@ -22,14 +23,14 @@ export const DUMMY_BLOGS : Blog[] = [
 ]
 
 export const DUMMY_TESTIMONIALS : Testimonial[] = [
-    { full_name: 'Nahome Giorgis', id: '1', body: 'Awesome trainer! Very knowledgeable on many different exercises and movements. Awesome trainer! Very knowledgeable on many different exercises and movements.', rating: 5},
-    { full_name: 'Homie George', id: '2', body: 'Awesome trainer! Very knowledgeable on many different exercises and movements.', rating: 4},
+    { full_name: 'Nahome Giorgis', id: '1', body: 'Awesome trainer! Very knowledgeable on many different exercises and movements. Awesome trainer! Very knowledgeable on many different exercises and movements.', rating: 5, created_at: '2022-01-01' },
+    { full_name: 'Homie George', id: '2', body: 'Awesome trainer! Very knowledgeable on many different exercises and movements.', rating: 4, created_at: '2022-01-01'},
     { full_name: 'Homer Simpson', id: '3', body: 'Awesome trainer!', rating: 5},
-    { full_name: 'George Homerson', id: '4', body: 'Awesome trainer! Very knowledgeable on many different exercises and movements.', rating: 5},
-    { full_name: 'Georgio Homersimperson', id: '5', body: 'Awesome trainer! Very knowledgeable on many different exercises and movements.', rating: 5},
-    { full_name: 'Nahome Giorgis', id: '6', body: 'Awesome trainer! Very knowledgeable on many different exercises and movements.', rating: 3},
-    { full_name: 'Nahome Giorgis', id: '7', body: 'Awesome trainer! Very knowledgeable on many different exercises and movements.', rating: 5},
-    { full_name: 'Nahome Giorgis', id: '8', body: 'Awesome trainer! Very knowledgeable on many different exercises and movements.', rating: 4},
+    { full_name: 'George Homerson', id: '4', body: 'Awesome trainer! Very knowledgeable on many different exercises and movements.', rating: 5, created_at: '2022-01-01'},
+    { full_name: 'Georgio Homersimperson', id: '5', body: 'Awesome trainer! Very knowledgeable on many different exercises and movements.', rating: 5, created_at: '2022-01-01'},
+    { full_name: 'Nahome Giorgis', id: '6', body: 'Awesome trainer! Very knowledgeable on many different exercises and movements.', rating: 3, created_at: '2022-01-01'},
+    { full_name: 'Nahome Giorgis', id: '7', body: 'Awesome trainer! Very knowledgeable on many different exercises and movements.', rating: 5, created_at: '2022-01-01'},
+    { full_name: 'Nahome Giorgis', id: '8', body: 'Awesome trainer! Very knowledgeable on many different exercises and movements.', rating: 4, created_at: '2022-01-01'},
 ]
 
 export const DUMMY_TRAINING_INFO : ITrainingInfo[] = [

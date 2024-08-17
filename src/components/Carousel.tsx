@@ -20,6 +20,10 @@ const Carousel: React.FC<PropType> = ({ slides, options, contentType }) => {
     const handleBlogClick = (id: string) => {
       router.push(`/blog?id=${id}`);
     };
+
+    const handleTestimonialClick = (id: string) => {
+      router.push(`/testimonials?id=${id}`);
+    };
   
     return (
         <section className='embla'>
@@ -34,7 +38,7 @@ const Carousel: React.FC<PropType> = ({ slides, options, contentType }) => {
                                 </div>
                             }
                             {contentType == 'testimonial' &&
-                                <Link href={"/"} className='flex flex-col w-full h-full border-orange border-2 rounded-3xl transition-all hover:font-bold hover:border-3'>
+                                <div onClick={() => handleTestimonialClick(slide.id)} className='flex flex-col cursor-pointer w-full h-full border-orange border-2 rounded-3xl transition-all hover:font-bold hover:border-3'>
                                     <div className='flex h-1/2 border-b-1 border-orange mx-5 py-5'>
                                         <p className='line-clamp-5 text-secondary-white text-base font-normal'>{slide.body}</p>
                                     </div>
@@ -45,7 +49,7 @@ const Carousel: React.FC<PropType> = ({ slides, options, contentType }) => {
                                             <Rating name='read-only' value={slide.rating} readOnly />
                                         </div>
                                     </div>
-                                </Link>
+                                </div>
                             }
                             {contentType == 'additional' &&
                                 <a href={slide.link}  target='_blank' className='cursor-pointer flex relative items-center justify-center w-full h-full border-orange border-2 rounded-3xl transition-all hover:font-bold hover:border-3'>
