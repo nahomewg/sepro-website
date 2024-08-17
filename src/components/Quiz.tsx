@@ -35,9 +35,11 @@ const Quiz: React.FC<PropType> = ( { questionsArray, title }) => {
     try {
       setAnswers({ ...answers, [currentQuestion.questionText]: selectedValue });
       const body = JSON.stringify(answers);
-      console.log(body, answers)
       const res = await fetch('api/emails', { method: 'POST',
-        body: JSON.stringify(body),
+        body: JSON.stringify({
+          emailType: 'quiz',
+          body,
+        }),
        })
   
       setLoading(false);
