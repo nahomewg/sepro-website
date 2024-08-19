@@ -1,6 +1,13 @@
 import Button from "./Button"
 
-const Hero = () => {
+const Hero = ({ refToStart }: { refToStart: any }) => {
+  const scrollToStart = () => {
+    if (refToStart.current) {
+      refToStart.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+
   return (
     <section className="w-full h-[660px] relative">
       <div className="bg-hero-background h-full w-full bg-cover bg-center opacity-70 absolute" />
@@ -11,7 +18,7 @@ const Hero = () => {
         </div>
       </div>
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-        <Button type="button" title="Get Started" borderColor="border-slate-400" />
+        <Button type="button" title="Get Started" borderColor="border-slate-400" onClick={scrollToStart} />
       </div>
     </section>
   )
