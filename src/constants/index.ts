@@ -70,7 +70,7 @@ export const READINESS_QUIZ : Question[] = [
     },
     {
         id: '3',
-        questionText: 'Weight',
+        questionText: 'Weight(lbs)',
         questionType: 'input'
     },
     {
