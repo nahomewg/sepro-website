@@ -33,7 +33,7 @@ const Carousel: React.FC<PropType> = ({ slides, options, contentType }) => {
                         <div key={slide.id} className={`emblaSlide ${contentType == 'blog' || contentType == 'additional' ? 'h-48' : 'h-80'}`}>
                             {contentType == 'blog' &&
                                 <div onClick={() => handleBlogClick(slide.id)} className='cursor-pointer flex relative items-center justify-center w-full h-full border-orange border-2 rounded-3xl transition-all hover:font-bold hover:border-3'>
-                                    <Image src={slide.image} alt="Background image" width={0} height={0} sizes='100vw' style={{ objectFit: 'cover' }} className='w-full h-full absolute rounded-3xl opacity-50' />
+                                    <Image src={slide.image ? slide.image : '/ropes.png'} alt="Background image" width={0} height={0} sizes='100vw' style={{ objectFit: 'cover' }} className='w-full h-full absolute rounded-3xl opacity-50' />
                                     <p className='line-clamp-2 px-5 text-base sm:text-xl md:text-2xl capitalize drop-shadow-[2px_2px_0_rgba(0,0,0,1)] font-semibold z-10'>{slide.title}</p>
                                 </div>
                             }

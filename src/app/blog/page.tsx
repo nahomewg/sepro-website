@@ -6,21 +6,40 @@ import BlogGallery from "@/components/BlogGallery"
 import { useEffect, useState } from "react";
 import BlogContent from "@/components/BlogContent";
 import { useSearchParams } from "next/navigation"
-import { DUMMY_BLOGS } from "@/constants"
+import { getBlogs } from "../api/supaApi"
+import { IBlog } from "@/app/interfaces/blog.interface"
 
 export default function Blog() {
     const [selectedBlog, setSelectedBlog] = useState<any>(null);
     const searchParams = useSearchParams();
     const blogId = searchParams.get("id");
+    const [blogs, setBlogs] = useState<IBlog[]>([]);
+
+    useEffect(() => {
+      const fetchBlogs = async () => {
+        try {
+          const data = await getBlogs();
+          setBlogs(data);
+        } catch (error) {
+          console.error(error);
+        }
+      }
+  
+      fetchBlogs();
+    }, [])
   
     useEffect(() => {
       if (blogId) {
-        const blog = DUMMY_BLOGS.find(blog => blog.id === blogId);
+        const blog = blogs.find(blog => blog.id === blogId);
         setSelectedBlog(blog);
       } else {
         setSelectedBlog(null);
       }
     }, [blogId]);
+
+    useEffect(() => {
+        console.log(selectedBlog)
+      }, [selectedBlog]);
   
     return (
         <>

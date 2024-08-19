@@ -1,4 +1,4 @@
-import { Blog } from "@/app/interfaces/blog.interface"
+import { IBlog } from "@/app/interfaces/blog.interface"
 import { Question } from "@/app/interfaces/questions.interface"
 import { Testimonial } from "@/app/interfaces/testimonial.interface"
 import { ITrainingInfo } from "@/app/interfaces/training.interface"
@@ -11,7 +11,7 @@ export const NAV_LINKS = [
     { href: '/contact', id: 'contact', label: 'Contact'},
 ]
 
-export const DUMMY_BLOGS : Blog[] = [
+export const DUMMY_BLOGS : IBlog[] = [
     { title: '10 tips for losing weight', id: '1', body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', image: '/ropes.png', created_at: '2022-01-01', additionalResources: [{ title: 'Video Link', id: '1', blogId: '1', link: 'https://youtube.com'}, { title: 'Amazon Link', id: '2', blogId: '1', link: 'https://amazon.com'}, { title: 'Etsy Link', id: '3', blogId: '1', link: 'https://etsy.com' }] },
     { title: '10 tips for losing weight', id: '2', body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', image: '/ropes.png', created_at: '2022-01-01' },
     { title: '10 tips for losing weight', id: '3', body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', image: '/ropes.png', created_at: '2022-01-01' },

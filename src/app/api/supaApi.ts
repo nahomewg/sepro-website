@@ -1,23 +1,45 @@
 'use server'
-import { Blog } from "@/app/interfaces/blog.interface";
+import { IBlog } from "@/app/interfaces/blog.interface";
 import { ITrainingInfo } from "@/app/interfaces/training.interface";
 import { db } from "@/db";
 import { blogsTable, trainingInfoTable } from "@/db/schema";
+import { desc } from 'drizzle-orm';
 
 
-export const getBlogs = async (): Promise<Blog[]> => {
+export const getBlogs = async (): Promise<IBlog[]> => {
     const data = await db.select().from(blogsTable);
 
     // Transform the data to match the Blog interface
-    const transformedData: Blog[] = data.map(blog => ({
+    const transformedData: IBlog[] = data.map(blog => ({
       ...blog,
       created_at: blog.created_at ? blog.created_at.toISOString() : undefined,
       alt: blog.alt ?? undefined,  // Convert null to undefined for the alt field
-      additionalResources: blog.additionalResources as Blog["additionalResources"]  // Ensure type compatibility
+      additionalResources: blog.additionalResources as IBlog["additionalResources"]  // Ensure type compatibility
     }));
 
   return transformedData;
 };
+
+export const getRecentBlog = async (): Promise<IBlog> => {
+  const data = await db
+    .select()
+    .from(blogsTable)
+    .orderBy(desc(blogsTable.created_at))
+    .limit(1);
+
+  if (data.length === 0) {
+    throw new Error('No blog found');
+  }
+  // Transform the data to match the Blog interface
+  const transformedData: IBlog = {
+    ...data[0],
+    created_at: data[0].created_at ? data[0].created_at.toISOString() : undefined,
+    alt: data[0].alt ?? undefined,  // Convert null to undefined for the alt field
+    additionalResources: data[0].additionalResources as IBlog["additionalResources"]  // Ensure type compatibility
+  };
+  return transformedData;
+
+}
 
 export const getTrainingInfo = async (): Promise<ITrainingInfo[]> => {
   const data = await db.select().from(trainingInfoTable);
