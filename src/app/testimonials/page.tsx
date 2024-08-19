@@ -32,12 +32,9 @@ export default function Testimonials() {
                     <Image src="/Down.png" alt="Down arrow" className="w-16 h-16 self-center" width={64} height={64} />
                 </Link>
             </section>
-            {selectedTestimonial ? (
+            {selectedTestimonial && 
                 <TestimonialCard test={selectedTestimonial} id ="feature" />
-            ) : (
-                <p>Nope</p>
-                // <TestimonialCard id="feature" />
-            )}
+            }
             <TestimonialGallery />
         </>
     )
