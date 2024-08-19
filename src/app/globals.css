@@ -2,32 +2,109 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: black;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, ul, li, label {
+    color: #DDDDDD;
+}
+
+.MuiButtonBase-root, .MuiButtonBase-root > span, .MuiSlider-rail, .MuiSlider-mark {
+  color: #DDDDDD;
+}
+
+.MuiMobileStepper-root {
+  background-color: black !important;
+}
+
+.MuiMobileStepper-root > span {
+  background-color: #ffcd95;
+}
+
+.MuiMobileStepper-root > span > span {
+  background-color: #F28A12;
+}
+
+.MuiMobileStepper-root > Button {
+  font-family: inherit;
+  text-transform: none;
+  color: #DDDDDD;
+  font-size: 1.25rem !important;
+  line-height: 1.75rem !important;
+}
+
+.MuiSlider-track, .MuiSlider-thumb {
+  color: #F28A12;
+  margin-top: 30px !important;
+}
+
+.MuiSlider-rail {
+  margin-top: 30px !important;
+}
+
+.MuiSlider-mark {
+  display: none !important;
+}
+
+.MuiSlider-markLabel {
+  font-size: 20px !important;
+  color: #DDDDDD !important;
+}
+
+.MuiRating-icon {
+  color: #faaf00;
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  html, body {
+    @apply scroll-smooth;
+  }
+
+  .embla {
+      --slide-height: 19rem;
+      --slide-spacing: 1rem;
+      --slide-size: 33%;
+  }
+
+  .emblaContainer {
+    backface-visibility: hidden;
+    display: flex;
+    touch-action: pan-y pinch-zoom;
+    margin-left: calc(var(--slide-spacing) * -1);
+  }
+
+  .emblaSlide {
+    display: flex;
+    flex: 0 0 var(--slide-size);
+    min-width: 0;
+    padding-left: var(--slide-spacing);
+  }
+
+  .emblaLarge {
+    --slide-size: 65%
+  }
+  
+  @media (max-width: 767px) {
+    .embla {
+      --slide-size: 75%;
+    }
+  }
+
+  @media (max-width: 479px) {
+    .embla {
+      --slide-size: 85%;
+    }
+  }
+
+  .stroke-custom {
+    font-family: sans-serif;
+    -webkit-text-stroke: 2px #DDDDDD;
+    -webkit-text-fill-color: transparent;
+    color: #DDDDDD;
+  }
+
+  .small-stroke {
+    -webkit-text-stroke: 1px #DDDDDD;
   }
 }

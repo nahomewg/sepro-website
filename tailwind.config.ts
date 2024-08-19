@@ -1,3 +1,4 @@
+import {nextui} from '@nextui-org/theme';
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -5,16 +6,37 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      screens: {
+        'xs': '480px',
       },
+      backgroundImage: {
+        "hero-background": "url('/hero-background.png')",
+        "blog-background": "url('/ropes.png')",
+        "contact-background": "url('/seb.png')",
+      },
+      colors: {
+        'secondary-white': '#E5E5E5',
+        'orange': '#F28A12',
+      }
     },
   },
-  plugins: [],
+  plugins: [nextui({
+    themes: {
+      light: {
+        colors: {
+          primary: '#F28A12',
+        },
+      },
+      dark: {
+        colors: {
+          primary: '#F28A12',
+        }
+      }
+    }
+  })],
 };
 export default config;
