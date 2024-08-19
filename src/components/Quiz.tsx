@@ -135,7 +135,7 @@ const Quiz: React.FC<PropType> = ( { questionsArray, title }) => {
       {!canStart ? (
         <>
         <h2 className="text-3xl md:text-4xl pb-12 font-bold text-center">{title}</h2>
-        <p className="text-xl pb-12 text-center">By clicking "Begin" you agree to the terms and conditions.</p>
+        <p className="text-xl pb-12 text-center">By clicking `Begin` you agree to the terms and conditions.</p>
         <div className="flex justify-center">
           <Button type="button" title='Submit' className="w-full py-3 bg-orange self-center rounded-full text-white font-semibold text-lg focus:outline-none hover:bg-orange"
             onClick={() => setCanStart(true)} />       
