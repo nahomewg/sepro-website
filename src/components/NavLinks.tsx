@@ -10,7 +10,7 @@ const NavLinks = () => {
         <li key={link.id}>
             <Link 
                 href={link.href} 
-                className={`text-lg font-light cursor-pointer transition-all ${pathname === link.href ? 'font-bold' : 'hover:font-bold'}`}
+                className={`text-lg font-light cursor-pointer uppercase transition-all ${pathname === link.href ? 'font-bold' : 'hover:font-bold'}`}
             >
                 {link.label}
             </Link>
