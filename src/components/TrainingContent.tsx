@@ -1,5 +1,4 @@
 import { ITrainingInfo } from "@/app/interfaces/training.interface"
-import { formatDate } from "@/app/utilities/dateUtils";
 
 interface TrainingContentProps {
   training: ITrainingInfo;
