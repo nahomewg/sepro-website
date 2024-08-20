@@ -165,4 +165,67 @@ export const BUILD_QUIZ : Question[] = [
     }
 ]
 
+export const PROGRAM_QUIZ : Question[] = [
+    {
+        id: '1',
+        questionText: 'Type of Training',
+        questionType: 'multiple',
+        options: [
+            { id: '1', optionText: 'Lose Weight' },
+            { id: '2', optionText: 'Build Muscle' },
+            { id: '3', optionText: 'Hybrid Training' },
+            { id: '4', optionText: 'Functional Training' },
+        ]
+    },
+    {
+        id: '2',
+        questionText: 'Activity Frequency (Times/Week)',
+        questionType: 'slider',
+        options: [
+            { id: '1', optionText: '0' },
+            { id: '2', optionText: '1-2' },
+            { id: '3', optionText: '3-4' },
+            { id: '4', optionText: '5+' },
+        ]
+    },
+    {
+        id: '3',
+        questionText: 'What Type of Activity Do You Do? (Select all that apply)',
+        questionType: 'multiple',
+        options: [
+            { id: '1', optionText: 'No Acitvity/Mostly Walking' },
+            { id: '2', optionText: 'Cardio' },
+            { id: '3', optionText: 'Strength Training' },
+            { id: '4', optionText: 'High Intensity Interval Training' },
+        ]
+    },
+    {
+        id: '4',
+        questionText: 'Readiness Level - On a Scale of 1-10, How Ready Are You to Make This Change Happen?',
+        questionType: 'slider',
+        options: [
+            { id: '1', optionText: '1' },
+            { id: '2', optionText: '2' },
+            { id: '3', optionText: '3' },
+            { id: '4', optionText: '4' },
+            { id: '5', optionText: '5' },
+            { id: '6', optionText: '6' },
+            { id: '7', optionText: '7' },
+            { id: '8', optionText: '8' },
+            { id: '9', optionText: '9' },
+            { id: '10', optionText: '10' },
+        ]
+    },
+    {
+        id: '5',
+        questionText: 'Program Difficulty',
+        questionType: 'multiple',
+        options: [
+            { id: '1', optionText: 'Beginner' },
+            { id: '2', optionText: 'Intermediate' },
+            { id: '3', optionText: 'Advanced' },
+        ]
+    }
+]
+
 

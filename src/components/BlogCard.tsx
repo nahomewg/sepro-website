@@ -30,7 +30,7 @@ const BlogCard = (props: any) => {
       }
 
     return (
-        <section id={props.id} className="py-48 px-10 lg:px-32 xl:px-64">
+        <section id={props.id} className="py-24 px-10 lg:px-32 xl:px-64">
             <Link href={`/blog?id=${blog?.id}`} className="cursor-pointer flex border-orange border-2 rounded-3xl transition-all hover:border-3">
                 <Image src={blog?.image ? blog.image : '/ropes.png'} alt="Training image" width={200} height={400} className="hidden md:block w-1/2 h-full rounded-s-3xl" />
                 <div className="flex flex-col flex-grow p-5">
