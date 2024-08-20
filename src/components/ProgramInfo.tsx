@@ -35,7 +35,7 @@ const ProgramInfo = forwardRef(function ProgramInfo(props, ref) {
   }
   
   return (
-    <section className="py-48 px-10 lg:px-32 xl:px-64" ref={compRef}>
+    <section className="py-24 px-10 lg:px-32 xl:px-64" ref={compRef}>
       <h2 className="text-3xl md:text-4xl text-center font-bold">Are You Ready To Take Your Training To The Next Level?</h2>
       <InfoCards trainingInfo={trainingInfo} preview={true} />
     </section>

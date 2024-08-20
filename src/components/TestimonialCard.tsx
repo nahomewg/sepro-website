@@ -11,7 +11,7 @@ interface TestimonialContentProps {
 
 const TestimonialCard: React.FC<TestimonialContentProps> = ({ test, id }) => {
   return (
-    <section id={id} className="py-48 px-10 lg:px-32 xl:px-64">
+    <section id={id} className="py-24 px-10 lg:px-32 xl:px-64">
       <div className='flex flex-col w-full h-full border-orange border-2 rounded-3xl transition-all hover:font-bold hover:border-3'>
         <div className='flex h-1/2 border-b-1 border-orange mx-5 py-5'>
             <p className='line-clamp-5 text-secondary-white text-base font-normal'>{test.body}</p>
