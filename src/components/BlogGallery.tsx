@@ -28,7 +28,7 @@ const BlogGallery = () => {
   }, [])
 
   return (
-    <div className="pb-48 px-10 lg:px-32 xl:px-64">
+    <div className="pb-24 px-10 lg:px-32 xl:px-64">
       <h2 className="text-3xl md:text-4xl pb-12 font-bold">Blog</h2>
       <Carousel slides={blogs} options={OPTIONS} contentType="blog"></Carousel>
     </div>

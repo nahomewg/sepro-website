@@ -131,7 +131,7 @@ const Quiz: React.FC<PropType> = ( { questionsArray, title }) => {
   };
 
   return (
-    <div className="pb-48 px-10 lg:px-32 xl:px-64">
+    <div className="pb-24 px-10 lg:px-32 xl:px-64">
       {!canStart ? (
         <>
         <h2 className="text-3xl md:text-4xl pb-12 font-bold text-center">{title}</h2>

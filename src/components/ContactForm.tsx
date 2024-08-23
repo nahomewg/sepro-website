@@ -65,7 +65,7 @@ const ContactForm = (props: any) => {
   };
 
   return (
-    <section id={props.id} className="flex pb-48 px-10 lg:px-32 xl:px-64 text-white">
+    <section id={props.id} className="flex pb-24 px-10 lg:px-32 xl:px-64 text-white">
       {loading ? (
         <div className='flex justify-center w-full'>
           <Loading />
