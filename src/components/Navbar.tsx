@@ -16,7 +16,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="flex justify-center py-10 px-10 lg:block lg:px-32">
+        <nav className="flex sticky top-0 z-50 bg-black justify-center py-10 px-10 lg:block lg:px-32">
             <div className="flex w-full justify-between items-center">
                 <Link href={"/"} className="flex gap-2.5 items-center group">
                     <Image src="/se-logo.svg" alt="logo" width={50} height={50} className="w-auto h-auto"/>
