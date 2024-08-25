@@ -35,8 +35,13 @@ const Quiz: React.FC<PropType> = ( { questionsArray, title }) => {
 
   const handleSubmit = async () => {
     setLoading(true);
+    let successMessage = 'Your submission has been accepted.';
     try {
       setAnswers({ ...answers, [currentQuestion.questionText]: selectedValue });
+      const lastQuestion = answers[currentQuestion.questionText];
+      if (lastQuestion === 'Need Help? Connect 1 on 1') {
+        successMessage = 'You`ve successfully joined the SE Training waitlist!';
+      }
       const body = JSON.stringify(answers);
       const res = await fetch('api/emails', { method: 'POST',
         body: JSON.stringify({
@@ -48,7 +53,7 @@ const Quiz: React.FC<PropType> = ( { questionsArray, title }) => {
       setLoading(false);
       
       if (res.ok) {
-        alert('Your submission has been accepted');
+        alert(successMessage);
       } else {
         alert('Your submission has failed, make sure the email you entered is correct.');
       }
