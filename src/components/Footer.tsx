@@ -18,17 +18,6 @@ const Footer = () => {
                     <Image src="/tiktok-orange.png" alt="tiktok" width={64} height={64} quality={100} className="hover:scale-110"/>
                 </Link>
             </div>
-            <div className="flex gap-5">
-                <Link href={"https://www.facebook.com/"} target="_blank">
-                    <Image src="/facebook.png" alt="facebook" width={64} height={64} quality={100} className="hover:scale-110"/>
-                </Link>
-                <Link href={"https://www.instagram.com/"} target="_blank">
-                    <Image src="/instagram.png" alt="instagram" width={64} height={64} quality={100} className="hover:scale-110"/>
-                </Link>
-                <Link href={"https://www.tiktok.com/"} target="_blank">
-                    <Image src="/tiktok.png" alt="tiktok" width={64} height={64} quality={100} className="hover:scale-110"/>
-                </Link>
-            </div>
         </div>
         <footer className="flex items-center justify-center py-4 px-10 lg:py-10 lg:px-32 bg-orange">
             <div className="flex w-full flex-col gap-14">
