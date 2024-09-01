@@ -10,7 +10,7 @@ const ContactForm = (props: any) => {
     email: '',
     phone: '',
     message: '',
-    agreeToTerms: false,
+    agreeToTerms: true,
     agreeToPromotions: true,
   });
   const [loading, setLoading] = useState(false);

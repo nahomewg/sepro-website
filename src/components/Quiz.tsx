@@ -24,6 +24,7 @@ const Quiz: React.FC<PropType> = ( { questionsArray, title }) => {
   const [hasError, setHasError] = useState(false);
   const [loading, setLoading] = useState(false);
   const [canStart, setCanStart] = useState(false);
+  const [agreeTerms, setAgreeTerms] = useState(true);
 
 
   const handleNext = () => {
@@ -34,8 +35,13 @@ const Quiz: React.FC<PropType> = ( { questionsArray, title }) => {
 
   const handleSubmit = async () => {
     setLoading(true);
+    let successMessage = 'Your submission has been accepted.';
     try {
       setAnswers({ ...answers, [currentQuestion.questionText]: selectedValue });
+      const lastQuestion = answers[currentQuestion.questionText];
+      if (lastQuestion === 'Need Help? Connect 1 on 1') {
+        successMessage = 'You`ve successfully joined the SE Training waitlist!';
+      }
       const body = JSON.stringify(answers);
       const res = await fetch('api/emails', { method: 'POST',
         body: JSON.stringify({
@@ -47,7 +53,7 @@ const Quiz: React.FC<PropType> = ( { questionsArray, title }) => {
       setLoading(false);
       
       if (res.ok) {
-        alert('Your submission has been accepted');
+        alert(successMessage);
       } else {
         alert('Your submission has failed, make sure the email you entered is correct.');
       }
@@ -135,7 +141,7 @@ const Quiz: React.FC<PropType> = ( { questionsArray, title }) => {
       {!canStart ? (
         <>
         <h2 className="text-3xl md:text-4xl pb-12 font-bold text-center">{title}</h2>
-        <p className="text-xl pb-12 text-center">By clicking `Begin` you agree to the terms and conditions.</p>
+        <p className="text-xl pb-12 text-center">Click the button below to begin!</p>
         <div className="flex justify-center">
           <Button type="button" title='Begin' className="w-full py-3 bg-orange self-center rounded-full text-white font-semibold text-lg focus:outline-none hover:bg-orange"
             onClick={() => setCanStart(true)} />       
@@ -177,6 +183,23 @@ const Quiz: React.FC<PropType> = ( { questionsArray, title }) => {
                       <Slider className="!py-12" defaultValue={0} value={setSlider(currentQuestion)} marks={marks} min={0} max={maxValue} onChange={e => handleInputChange(e)} />
                     </div>
                   }
+                  {index === 0 &&
+                    <>
+                      <div className="mb-4 flex justify-center items-start">
+                        <input
+                          className="mr-2"
+                          type="checkbox"
+                          name="agreeToTerms"
+                          required={true}
+                          checked={agreeTerms}
+                          onChange={() => {setAgreeTerms(!agreeTerms)}}
+                        />
+                        <label htmlFor="agreeToTerms" className="text-sm">
+                          I agree to the terms of service, privacy policy, refund policy, subscription, terms, and cookie policy.
+                        </label>
+                      </div>
+                    </>
+                  }
                 </section>
               </>
             )
@@ -184,6 +207,7 @@ const Quiz: React.FC<PropType> = ( { questionsArray, title }) => {
         </>
       )}
       <MobileStepper
+        className={!canStart ? 'hidden' : ''}
         variant="progress"
         steps={questionsArray.length}
         position="static"
@@ -195,7 +219,7 @@ const Quiz: React.FC<PropType> = ( { questionsArray, title }) => {
           </MUIButton>
         } 
         nextButton={
-          <MUIButton size="small" onClick={index === questionsArray.length - 1 ? handleSubmit : handleNext} disabled={nextDisabled}>
+          <MUIButton size="small" onClick={index === questionsArray.length - 1 ? handleSubmit : handleNext} disabled={nextDisabled || !agreeTerms}>
             {index === questionsArray.length - 1 ? 'Submit' : 'Next'}
             <KeyboardArrowRight />
           </MUIButton>
