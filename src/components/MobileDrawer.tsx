@@ -44,7 +44,7 @@ const MobileDrawer = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => voi
                     :
                         <Link 
                             href={link.href} 
-                            className={`text-lg font-light cursor-pointer transition-all ${pathname === link.href ? 'font-bold' : 'hover:font-bold'}`}
+                            className={`text-lg uppercase font-light cursor-pointer transition-all ${pathname === link.href ? 'font-bold' : 'hover:font-bold'}`}
                             onClick={onClose}
                         >
                             {link.label}
