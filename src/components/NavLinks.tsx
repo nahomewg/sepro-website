@@ -30,7 +30,7 @@ const NavLinks = () => {
                                     }}
                                 className={`flex gap-2 text-base font-light cursor-pointer uppercase transition-all ${pathname === link.href ? 'font-bold' : 'hover:font-bold'}`}>
                                 {link.label}
-                                <Image src={"/chevron-down.png"} width={20} height={10} alt="down arrow"/>
+                                <Image src={"/chevron-down.png"} width={20} height={10} alt="down arrow" className="w-auto h-auto"/>
                             </p>
                         </DropdownTrigger>
                         <DropdownMenu color="primary">
