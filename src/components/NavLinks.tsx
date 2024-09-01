@@ -17,6 +17,10 @@ const NavLinks = () => {
         setOpenDropdowns({ ...openDropdowns, [id]: false });
     }
 
+    const handleLinkClick = (id: string, isOpen: boolean) => {
+        setOpenDropdowns({...openDropdowns, [id]: isOpen});
+    }
+
     return (
     <ul className="hidden h-full gap-28 items-center lg:flex">
         {NAV_LINKS.map((link) => (
@@ -25,12 +29,11 @@ const NavLinks = () => {
                     <Dropdown isOpen={!!openDropdowns[link.id]} onMouseLeave={() => handleMouseLeave(link.id)} className="bg-black">
                         <DropdownTrigger>
                             <p
-                                onMouseEnter={() => {
-                                    handleMouseEnter(link.id);
-                                    }}
+                                onMouseEnter={() => {handleMouseEnter(link.id);}}
+                                onClick={() => handleLinkClick(link.id, !openDropdowns[link.id])}
                                 className={`flex gap-2 text-base font-light cursor-pointer uppercase transition-all ${pathname === link.href ? 'font-bold' : 'hover:font-bold'}`}>
                                 {link.label}
-                                <Image src={"/chevron-down.png"} width={20} height={10} alt="down arrow" className="w-auto h-auto"/>
+                                <Image src={"/chevron-down.png"} width={15} height={10} alt="down arrow" className="w-auto h-auto"/>
                             </p>
                         </DropdownTrigger>
                         <DropdownMenu color="primary">

@@ -9,12 +9,8 @@ const MobileDrawer = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => voi
     const [openDropdowns, setOpenDropdowns] = useState<Record<string, boolean>>({});
     const pathname = usePathname();
 
-    const handleMouseEnter = (id: string) => {
-        setOpenDropdowns({ ...openDropdowns, [id]: true });
-    }
-
-    const handleMouseLeave = (id: string) => {
-        setOpenDropdowns({ ...openDropdowns, [id]: false });
+    const handleLinkClick = (id: string, isOpen: boolean) => {
+        setOpenDropdowns({...openDropdowns, [id]: isOpen});
     }
     return (
     <div className={`fixed flex flex-col justify-center items-center z-20 top-0 right-0 h-full w-full bg-black
@@ -28,15 +24,13 @@ const MobileDrawer = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => voi
             {NAV_LINKS.map((link) => (
                 <li key={link.id}>
                     {link.children ?
-                        <Dropdown isOpen={!!openDropdowns[link.id]} onMouseLeave={() => handleMouseLeave(link.id)} className="bg-black">
+                        <Dropdown isOpen={!!openDropdowns[link.id]} className="bg-black">
                             <DropdownTrigger>
                                 <p
-                                    onMouseEnter={() => {
-                                        handleMouseEnter(link.id);
-                                        }}
+                                    onClick={() => handleLinkClick(link.id, !openDropdowns[link.id])}
                                     className={`flex gap-2 text-base font-light cursor-pointer uppercase transition-all ${pathname === link.href ? 'font-bold' : 'hover:font-bold'}`}>
                                     {link.label}
-                                    <Image src={"/chevron-down.png"} width={20} height={10} alt="down arrow" className="w-auto h-auto"/>
+                                    <Image src={"/chevron-down.png"} width={15} height={10} alt="down arrow" className="w-auto h-auto"/>
                                 </p>
                             </DropdownTrigger>
                             <DropdownMenu color="primary">
