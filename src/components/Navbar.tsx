@@ -1,6 +1,4 @@
 'use client'
-import { usePathname } from 'next/navigation';
-import { NAV_LINKS } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from 'react';
