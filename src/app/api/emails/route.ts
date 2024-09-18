@@ -23,8 +23,8 @@ export async function POST(request: Request) {
 
     try {
     const { data, error } = await resend.emails.send({
-        from: 'SE PRO-GRAM <no-reply@woldecode.ca>',
-        to: ['nwgiorgis@gmail.com'],
+        from: 'SE PRO-GRAM <no-reply@seprogram.ca>',
+        to: ['sebelimbi@gmail.com'],
         subject: subject,
         react: emailTemplate,
     });
