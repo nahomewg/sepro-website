@@ -5,10 +5,20 @@ import { ITrainingInfo } from "@/app/interfaces/training.interface"
 
 // IMPORTANT: DO NOT CHANGE THE ORDER OF THE NAV LINKS
 export const NAV_LINKS = [
-    { href: '/training', id: 'training', label: 'Training', children: [{href: '/training/programs', id: 'programs', label: 'SE Training Programs'}, {href: '/training/packages', id: 'packages', label: 'Training Packages'}]},
+    { href: '/training', id: 'training', label: 'Training', 
+        // children: [
+        //     {href: '/training/programs', id: 'programs', label: 'SE Training Programs'}, 
+        //     {href: '/training/packages', id: 'packages', label: 'Training Packages'}
+        // ]
+    },
     { href: '/blog', id: 'blog', label: 'Blog'},
     { href: '/testimonials', id: 'testimonials', label: 'Testimonials'},
-    { href: '/contact', id: 'contact', label: 'Contact', children: [{href: '/contact/about', id: 'about', label: 'About Us'}, {href: '/contact', id: 'contactUs', label: 'Contact Us'}]},
+    { href: '/contact', id: 'contact', label: 'Contact', 
+        // children: [
+        //     {href: '/contact/about', id: 'about', label: 'About Us'}, 
+        //     {href: '/contact', id: 'contactUs', label: 'Contact Us'}
+        // ]
+    },
 ]
 
 export const DUMMY_BLOGS : IBlog[] = [

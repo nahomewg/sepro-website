@@ -23,7 +23,7 @@ const MobileDrawer = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => voi
         <ul className="flex flex-col justify-center items-center space-y-4">
             {NAV_LINKS.map((link) => (
                 <li key={link.id}>
-                    {link.children ?
+                    {/* {link.children ?
                         <Dropdown isOpen={!!openDropdowns[link.id]} className="bg-black">
                             <DropdownTrigger>
                                 <p
@@ -49,7 +49,14 @@ const MobileDrawer = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => voi
                         >
                             {link.label}
                         </Link>
-                    }
+                    } */}
+                    <Link 
+                        href={link.href} 
+                        className={`text-lg uppercase font-light cursor-pointer transition-all ${pathname === link.href ? 'font-bold' : 'hover:font-bold'}`}
+                        onClick={onClose}
+                    >
+                        {link.label}
+                    </Link>
                 </li>
             ))}
         </ul>

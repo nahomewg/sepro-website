@@ -25,7 +25,7 @@ const NavLinks = () => {
     <ul className="hidden h-full gap-28 items-center lg:flex">
         {NAV_LINKS.map((link) => (
             <li key={link.id}>
-                {link.children ?
+                {/* {link.children ?
                     <Dropdown isOpen={!!openDropdowns[link.id]} onMouseLeave={() => handleMouseLeave(link.id)} className="bg-black">
                         <DropdownTrigger>
                             <p
@@ -51,7 +51,13 @@ const NavLinks = () => {
                     >
                         {link.label}
                     </Link>
-                }
+                } */}
+                <Link 
+                    href={link.href} 
+                    className={`text-base font-light cursor-pointer uppercase transition-all ${pathname === link.href ? 'font-bold' : 'hover:font-bold'}`}
+                >
+                    {link.label}
+                </Link>
             </li>
         ))}
     </ul>
