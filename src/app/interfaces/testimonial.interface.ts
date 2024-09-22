@@ -1,5 +1,5 @@
 export interface Testimonial {
-    full_name: string,
+    title: string,
     id: string,
     body: string,
     rating: number

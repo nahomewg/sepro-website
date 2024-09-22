@@ -1,0 +1,1 @@
+ALTER TABLE "testimonials" ALTER COLUMN "rating" SET DATA TYPE integer;

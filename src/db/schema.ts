@@ -1,5 +1,5 @@
 import { sql } from 'drizzle-orm';
-import { pgTable, text, varchar, timestamp, json, boolean, uuid } from 'drizzle-orm/pg-core';
+import { pgTable, text, varchar, timestamp, json, boolean, uuid, integer } from 'drizzle-orm/pg-core';
 
 // Define the schema for the `blogs` table
 export const blogsTable = pgTable('blogs', {
@@ -24,9 +24,9 @@ export const additionalResourcesTable = pgTable('additional_resources', {
 // Define the schema for the `testimonials` table
 export const testimonialsTable = pgTable('testimonials', {
   id: uuid('id').default(sql`gen_random_uuid()`).primaryKey(),
-  fullName: varchar('full_name').notNull(),
+  title: varchar('title').notNull(),
   body: text('body').notNull(),
-  rating: uuid('rating').notNull(),
+  rating: integer('rating').notNull(),
   image: varchar('image'),
   alt: varchar('alt'),
 });
