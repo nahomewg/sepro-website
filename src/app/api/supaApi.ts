@@ -2,8 +2,9 @@
 import { IBlog } from "@/app/interfaces/blog.interface";
 import { ITrainingInfo } from "@/app/interfaces/training.interface";
 import { db } from "@/db";
-import { blogsTable, trainingInfoTable } from "@/db/schema";
+import { blogsTable, testimonialsTable, trainingInfoTable } from "@/db/schema";
 import { desc } from 'drizzle-orm';
+import { Testimonial } from "../interfaces/testimonial.interface";
 
 
 export const getBlogs = async (): Promise<IBlog[]> => {
@@ -55,3 +56,16 @@ export const getTrainingInfo = async (): Promise<ITrainingInfo[]> => {
 
   return transformedData;
 };
+
+export const getTestimonials = async (): Promise<Testimonial[]> => {
+  const data = await db.select().from(testimonialsTable);
+
+  // Transform the data to match the Testimonial interface
+  const transformedData: Testimonial[] = data.map(testimonial => ({
+    ...testimonial,
+    image: testimonial.image ?? undefined,
+    alt: testimonial.alt ?? undefined
+  }));
+
+  return transformedData;
+}

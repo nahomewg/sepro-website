@@ -17,9 +17,9 @@ const TestimonialCard: React.FC<TestimonialContentProps> = ({ test, id }) => {
             <p className='line-clamp-5 text-secondary-white text-base font-normal'>{test.body}</p>
         </div>
         <div className='flex flex-grow px-5 py-5 items-center gap-3'>
-            <Avatar name={test.full_name[0]} color='warning' className='w-12 h-12 sm:w-16 sm:h-16 md:w-18 md:h-18 font-extrabold text-2xl sm:text-3xl md:text-4xl' />
+            <Avatar name={test.title[0]} color='warning' className='w-12 h-12 sm:w-16 sm:h-16 md:w-18 md:h-18 font-extrabold text-2xl sm:text-3xl md:text-4xl' />
             <div className='flex flex-col'>
-                <p className='text-secondary-white text-base font-normal'>{test.full_name}</p>
+                <p className='text-secondary-white text-base font-normal'>{test.title}</p>
                 <Rating name='read-only' value={test.rating} readOnly />
             </div>
         </div>

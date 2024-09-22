@@ -43,9 +43,9 @@ const Carousel: React.FC<PropType> = ({ slides, options, contentType }) => {
                                         <p className='line-clamp-5 text-secondary-white text-base font-normal'>{slide.body}</p>
                                     </div>
                                     <div className='flex flex-grow px-5 pb-5 items-center gap-3'>
-                                        <Avatar name={slide.full_name[0]} color='warning' className='w-12 h-12 sm:w-16 sm:h-16 md:w-18 md:h-18 font-extrabold text-2xl sm:text-3xl md:text-4xl' />
+                                        <Avatar name={slide.title[0]} color='warning' className='w-12 h-12 sm:w-16 sm:h-16 md:w-18 md:h-18 font-extrabold text-2xl sm:text-3xl md:text-4xl' />
                                         <div className='flex flex-col'>
-                                            <p className='text-secondary-white text-base font-normal'>{slide.full_name}</p>
+                                            <p className='text-secondary-white text-base font-normal'>{slide.title}</p>
                                             <Rating name='read-only' value={slide.rating} readOnly />
                                         </div>
                                     </div>
