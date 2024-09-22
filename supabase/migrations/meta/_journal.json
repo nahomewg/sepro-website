@@ -15,6 +15,13 @@
       "when": 1723171220843,
       "tag": "0001_purple_daimon_hellstrom",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1726781225774,
+      "tag": "0002_strange_mikhail_rasputin",
+      "breakpoints": true
     }
   ]
 }
